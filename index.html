@@ -206,47 +206,6 @@
   © 2026 Premium Real Estate Advisory | All Rights Reserved
 </footer><a class="whatsapp" href="https://wa.me/918769328901" target="_blank"></a>
 
-  <section>
-  <h2 style="text-align:center; margin-bottom:30px;">Properties for Sale</h2>
-  <div class="features sheet-properties">
-  </div>
-  </section>
-  
-<script>
-const sheetId = "1_D4cwePnsgtHxCt8ywfD3Gg_edr9N1NiW78C-Klfiaw";
-const sheetName = "Sheet1";
-const url = `https://opensheet.elk.sh/${sheetId}/${sheetName}`;
-
-fetch(url)
-  .then(res => res.json())
-  .then(data => {
-    const container = document.querySelector(".features");
-    container.innerHTML = "";
-
-    data.forEach(item => {
-      const propertyType = item["Property type"] || item["Property Type"] || "";
-      const location = item["Location"] || "";
-      const landmark = item["Nearby Landmark"] || "";
-      const size = item["Size ( in gaj )"] || item["Size"] || "";
-      const price = item["Price"] || "";
-      const negotiable = item["Negotiable"] || "";
-      const image = item["Image"] || "https://via.placeholder.com/300x200";
-
-      container.innerHTML += `
-        <div class="card">
-          <img src="${image}" style="width:100%;border-radius:12px;margin-bottom:10px">
-          <h3>${propertyType}</h3>
-          <p><strong>Location:</strong> ${location}</p>
-          <p><strong>Nearby Landmark:</strong> ${landmark}</p>
-          <p><strong>Size:</strong> ${size}</p>
-          <p><strong>Price:</strong> ${price}</p>
-          <p><strong>Negotiable:</strong> ${negotiable}</p>
-        </div>
-      `;
-    });
-  });
-</script>
-
 <script>
   function handleSubmit(e) {
     e.preventDefault();
@@ -256,6 +215,7 @@ fetch(url)
 </html>
 
   
+
 
 
 
