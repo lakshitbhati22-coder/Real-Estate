@@ -195,6 +195,32 @@
   © 2026 Premium Real Estate Advisory | All Rights Reserved
 </footer><a class="whatsapp" href="https://wa.me/918769328901" target="_blank"></a>
 
+  <script>
+const sheetId = "1_D4cwePnsgtHxCt8ywfD3Gg_edr9N1NiW78C-Klfiaw";
+const sheetName = "Sheet1";
+const url = `https://opensheet.elk.sh/${sheetId}/${sheetName}`;
+
+fetch(url)
+  .then(res => res.json())
+  .then(data => {
+    const container = document.querySelector(".features");
+    container.innerHTML = "";
+
+    data.forEach(item => {
+      container.innerHTML += `
+        <div class="card">
+          <img src="${item.Image}" style="width:100%;border-radius:12px;margin-bottom:10px">
+          <h3>${item["Property Type"]}</h3>
+          <p><strong>Location:</strong> ${item.Location}</p>
+          <p><strong>Nearby Landmark:</strong> ${item["Nearby Landmark"]}</p>
+          <p><strong>Size:</strong> ${item["Size (in gaj)"]}</p>
+          <p><strong>Price:</strong> ${item.Price}</p>
+        </div>
+      `;
+    });
+  });
+  </script>
+  
 <script>
   function handleSubmit(e) {
     e.preventDefault();
@@ -204,3 +230,4 @@
 </html>
 
   
+
