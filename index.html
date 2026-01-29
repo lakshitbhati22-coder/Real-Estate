@@ -206,20 +206,28 @@ fetch(url)
     container.innerHTML = "";
 
     data.forEach(item => {
+      const propertyType = item["Property type"] || item["Property Type"] || "";
+      const location = item["Location"] || "";
+      const landmark = item["Nearby Landmark"] || "";
+      const size = item["Size ( in gaj )"] || item["Size"] || "";
+      const price = item["Price"] || "";
+      const negotiable = item["Negotiable"] || "";
+      const image = item["Image"] || "https://via.placeholder.com/300x200";
+
       container.innerHTML += `
-          <div class="card">
-  <img src="${item.Image}" style="width:100%;border-radius:12px;margin-bottom:10px">
-  <h3>${item["Property type"]}</h3>
-  <p><strong>Location:</strong> ${item.Location}</p>
-  <p><strong>Nearby Landmark:</strong> ${item["Nearby Landmark"]}</p>
-  <p><strong>Size:</strong> ${item["Size ( in gaj )"]}</p>
-  <p><strong>Price:</strong> ${item.Price}</p>
-  <p><strong>Negotiable:</strong> ${item.Negotiable}</p>
-  </div>
+        <div class="card">
+          <img src="${image}" style="width:100%;border-radius:12px;margin-bottom:10px">
+          <h3>${propertyType}</h3>
+          <p><strong>Location:</strong> ${location}</p>
+          <p><strong>Nearby Landmark:</strong> ${landmark}</p>
+          <p><strong>Size:</strong> ${size}</p>
+          <p><strong>Price:</strong> ${price}</p>
+          <p><strong>Negotiable:</strong> ${negotiable}</p>
+        </div>
       `;
     });
   });
-  </script>
+</script>
 
 <script>
   function handleSubmit(e) {
@@ -230,6 +238,7 @@ fetch(url)
 </html>
 
   
+
 
 
 
