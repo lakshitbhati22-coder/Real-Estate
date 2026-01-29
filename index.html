@@ -207,20 +207,20 @@ fetch(url)
 
     data.forEach(item => {
       container.innerHTML += `
-        <div class="card">
-          <img src="${item.Image}" style="width:100%;border-radius:12px;margin-bottom:10px">
-          <h3>${item["Property type"]}</h3>
-          <p><strong>Location:</strong> ${item.Location}</p>
-          <p><strong>Nearby Landmark:</strong> ${item["Nearby Landmark"]}</p>
-          <p><strong>Size:</strong> ${item["Size (in gaj)"]}</p>
-          <p><strong>Price:</strong> ${item.Price}</p>
-          <p>strong>Negotiable:</strong> ${item.["Negotiable"]}</p>
-        </div>
+          <div class="card">
+  <img src="${item.Image}" style="width:100%;border-radius:12px;margin-bottom:10px">
+  <h3>${item["Property type"]}</h3>
+  <p><strong>Location:</strong> ${item.Location}</p>
+  <p><strong>Nearby Landmark:</strong> ${item["Nearby Landmark"]}</p>
+  <p><strong>Size:</strong> ${item["Size ( in gaj )"]}</p>
+  <p><strong>Price:</strong> ${item.Price}</p>
+  <p><strong>Negotiable:</strong> ${item.Negotiable}</p>
+  </div>
       `;
     });
   });
   </script>
-  
+
 <script>
   function handleSubmit(e) {
     e.preventDefault();
@@ -230,6 +230,7 @@ fetch(url)
 </html>
 
   
+
 
 
 
